@@ -1,8 +1,5 @@
-import { useRef, useState } from 'react';
-import { Text, Group, Button, rem, useMantineTheme } from '@mantine/core';
-import { Dropzone, MIME_TYPES } from '@mantine/dropzone';
-import { IconCloudUpload, IconX, IconDownload } from '@tabler/icons-react';
-import classes from './DropzoneButton.module.css';
+import { FormEvent, useRef, useState } from 'react';
+import { Button, useMantineTheme } from '@mantine/core';
 import { GetTouchCustom } from './GetTouchCustom';
 
 export function DropzoneButton() {
@@ -12,7 +9,7 @@ export function DropzoneButton() {
   const [templateBg, setTemplateBg] = useState('');
   const [isTemplateBgSet, setIsTemplateBgSet] = useState(false);
 
-  const handleSubmitTemplate = (e) => {
+  const handleSubmitTemplate = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsTemplateBgSet(true);
   };

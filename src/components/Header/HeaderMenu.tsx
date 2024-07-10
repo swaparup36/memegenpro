@@ -1,18 +1,16 @@
 import { Menu, Group, Center, Burger, Container } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconChevronDown } from '@tabler/icons-react';
-import { MantineLogo } from '@mantinex/mantine-logo';
 import { Link, useNavigate } from 'react-router-dom';
 import classes from './HeaderMenu.module.css';
 
 const links = [
-  { link: '/', label: 'Home' },
-  { link: '/about', label: 'About' },
-  { link: '/your-memes', label: 'Your memes' },
+  { link: '/', label: 'Home', links: [] },
+  { link: '/about', label: 'About', links: [] },
+  { link: '/your-memes', label: 'Your memes', links: [] },
 ];
 
 export function HeaderMenu() {
-  const navigate = useNavigate();
   const [opened, { toggle }] = useDisclosure(false);
 
   const items = links.map((link) => {

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { FormEvent, useState } from 'react';
 import { Paper, Text, TextInput, Button, Group } from '@mantine/core';
 import { saveAs } from 'file-saver';
 import classes from './GetInTouchCustom.module.css';
@@ -10,8 +10,16 @@ interface memeFormInterface {
   redirect: boolean;
 }
 
-export function GetTouchCustom({ templateBg }) {
-  const [result, setResult] = useState(null);
+interface customTemplatePropsInterface {
+  templateBg: string
+}
+
+interface resultInterface {
+  url: string
+}
+
+export function GetTouchCustom({ templateBg }: customTemplatePropsInterface) {
+  const [result, setResult] = useState<resultInterface | null>(null);
 
   const [memeForm, setMemeForm] = useState<memeFormInterface>({
     background: templateBg,
@@ -22,7 +30,7 @@ export function GetTouchCustom({ templateBg }) {
 
   const [textFields, setTextFilelds] = useState([0]);
 
-  const handleGenerateMeme = async (event) => {
+  const handleGenerateMeme = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
       const response = await fetch('https://api.memegen.link/templates/custom', {
@@ -55,7 +63,7 @@ export function GetTouchCustom({ templateBg }) {
     }
   };
 
-  const downloadImage = (url) => {
+  const downloadImage = (url: string) => {
     saveAs(url, 'meme.png'); // Put your image URL here.
   };
 
