@@ -1,12 +1,12 @@
 import { FooterSocial } from '@/components/Footer/FooterSocial';
 import { HeaderMenu } from '@/components/Header/HeaderMenu';
-import { HeroBullets } from '@/components/Hero/HeroBullets';
+import { GetInTouch } from '@/components/MemeTemplateEdit/GetInTouch';
 
-export function HomePage() {
+export function EditTemplate() {
   return (
     <>
       <HeaderMenu />
-      <HeroBullets />
+      <GetInTouch />
       <FooterSocial />
     </>
   );
