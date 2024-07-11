@@ -8,7 +8,7 @@ export function FooterSocial() {
     <div className={classes.footer} style={{ marginTop: '0.5rem' }}>
       <Container className={classes.inner}>
           <div style={{ width: '20%' }}>
-            <img src="./src/memegenpro_logo.png" alt="" style={{ width: '100%' }} />
+            <img src="https://i.ibb.co/Phtr5md/memegenpro-logo.png" alt="" style={{ width: '100%' }} />
           </div>
         <Group gap={0} className={classes.links} justify="flex-end" wrap="nowrap">
           <ActionIcon size="lg" color="gray" variant="subtle">

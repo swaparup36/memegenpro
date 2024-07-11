@@ -32,7 +32,7 @@ export function HeaderMenu() {
         <div className={classes.inner}>
           {/* <MantineLogo style={{ cursor: 'pointer' }} size={28} onClick={() => navigate('/')} /> */}
           <div style={{ width: '20%' }}>
-            <img src="./src/memegenpro_logo.png" alt="" style={{ width: '100%' }} />
+            <img src="https://i.ibb.co/Phtr5md/memegenpro-logo.png" alt="" style={{ width: '100%' }} />
           </div>
           <Group gap={5} visibleFrom="sm">
             {items}
