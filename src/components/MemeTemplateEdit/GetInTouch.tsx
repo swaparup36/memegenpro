@@ -25,8 +25,12 @@ interface memeTemplateInterface {
   _self: string,
 }
 
+interface memeResultInterface {
+  url: string,
+}
+
 export function GetInTouch() {
-  const [result, setResult] = useState(null);
+  const [result, setResult] = useState<memeResultInterface | null>(null);
   const [template, setTemplate] = useState<memeTemplateInterface | null>(null);
   const fetchTemplateById = async () => {
     try {
