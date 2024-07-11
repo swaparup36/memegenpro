@@ -1,41 +1,19 @@
-import { Menu, Group, Center, Burger, Container } from '@mantine/core';
+import { Group, Burger, Container } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { IconChevronDown } from '@tabler/icons-react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import classes from './HeaderMenu.module.css';
 
 const links = [
-  { link: '/', label: 'Home', links: [] },
-  { link: '/about', label: 'About', links: [] },
-  { link: '/your-memes', label: 'Your memes', links: [] },
+  { link: '/', label: 'Home' },
+  { link: '/about', label: 'About' },
+  { link: '/your-memes', label: 'Your memes' },
 ];
 
 export function HeaderMenu() {
   const [opened, { toggle }] = useDisclosure(false);
 
   const items = links.map((link) => {
-    const menuItems = link.links?.map((item) => (
-      <Menu.Item key={item.link}>{item.label}</Menu.Item>
-    ));
-
-    if (menuItems) {
-      return (
-        <Menu key={link.label} trigger="hover" transitionProps={{ exitDuration: 0 }} withinPortal>
-          <Menu.Target>
-            <Link
-              to={link.link}
-              className={classes.link}
-            >
-              <Center>
-                <span className={classes.linkLabel}>{link.label}</span>
-                <IconChevronDown size="0.9rem" stroke={1.5} />
-              </Center>
-            </Link>
-          </Menu.Target>
-          <Menu.Dropdown>{menuItems}</Menu.Dropdown>
-        </Menu>
-      );
-    }
+    console.log('first');
 
     return (
       <Link

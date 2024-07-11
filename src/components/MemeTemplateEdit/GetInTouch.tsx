@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 import { Paper, Text, TextInput, Button, Group } from '@mantine/core';
 import { saveAs } from 'file-saver';
 import classes from './GetInTouch.module.css';
@@ -9,9 +9,25 @@ interface memeFormInterface {
   redirect: boolean;
 }
 
+interface memeTemplateInterface {
+  id: string,
+  name: string,
+  lines: number,
+  overlays: number,
+  styles: string[],
+  blank: string,
+  example: {
+    text: string[],
+    url: string
+  },
+  source: string,
+  keywords: string[],
+  _self: string,
+}
+
 export function GetInTouch() {
   const [result, setResult] = useState(null);
-  const [template, setTemplate] = useState(null);
+  const [template, setTemplate] = useState<memeTemplateInterface | null>(null);
   const fetchTemplateById = async () => {
     try {
       const response = await fetch(
@@ -22,6 +38,7 @@ export function GetInTouch() {
 
       if (response.ok) {
         setTemplate(data);
+        if (!template) return;
         for (let i = 0; i < template.lines; i++) {
           memeForm.text.push('');
         }
@@ -40,7 +57,7 @@ export function GetInTouch() {
     redirect: false,
   });
 
-  const handleGenerateMeme = async (event) => {
+  const handleGenerateMeme = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
       const response = await fetch('https://api.memegen.link/images', {
@@ -73,7 +90,7 @@ export function GetInTouch() {
     }
   };
 
-  const downloadImage = (url) => {
+  const downloadImage = (url: string) => {
     saveAs(url, 'meme.png'); // Put your image URL here.
   };
 
@@ -86,7 +103,7 @@ export function GetInTouch() {
         <div className={`${classes.wrapper} template-edit-container`}>
           <div className={classes.contacts}>
             <img
-              src={template && template.blank}
+              src={template ? template.blank : ''}
               alt=""
               style={{ padding: '25px', maxWidth: '500px' }}
             />
@@ -98,7 +115,7 @@ export function GetInTouch() {
 
             <div className={classes.fields}>
               {template &&
-                template.example.text.map((element, i) => (
+                template.example.text.map((element, i: number) => (
                   <TextInput
                     key={i}
                     mt="md"

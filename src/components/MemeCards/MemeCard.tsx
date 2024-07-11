@@ -10,7 +10,7 @@ interface tempalteCardIterface {
 
 export function MemeCard({ meme }: tempalteCardIterface) {
   const navigate = useNavigate();
-  const downloadImage = (url) => {
+  const downloadImage = (url: string) => {
     saveAs(url, 'meme.png'); // Put your image URL here.
   };
   return (
