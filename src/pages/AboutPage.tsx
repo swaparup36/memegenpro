@@ -1,7 +1,12 @@
+import { useEffect } from 'react';
 import { FooterSocial } from '@/components/Footer/FooterSocial';
 import { HeaderMenu } from '@/components/Header/HeaderMenu';
 
 export function AboutPage() {
+  useEffect(() => {
+    document.title = 'Memegen Pro | About';
+  });
+
   return (
     <>
       <HeaderMenu />

@@ -30,6 +30,7 @@ export function ExploreTemplates() {
 
   useEffect(() => {
     fetchAllTemplates();
+    document.title = 'Memegen Pro | Explore';
   }, []);
   return (
     <>

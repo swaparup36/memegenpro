@@ -1,8 +1,13 @@
+import { useEffect } from 'react';
 import { DropzoneButton } from '@/components/CustomUpload/DropzoneButton';
 import { FooterSocial } from '@/components/Footer/FooterSocial';
 import { HeaderMenu } from '@/components/Header/HeaderMenu';
 
 export function CustomTemplate() {
+  useEffect(() => {
+    document.title = 'Memegen Pro | Custom Templates';
+  });
+
   return (
     <>
       <HeaderMenu />
