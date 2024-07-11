@@ -149,7 +149,7 @@ export function GetTouchCustom({ templateBg }: customTemplatePropsInterface) {
             <div>
               <div style={{ marginBottom: '2rem', width: '100%' }}>
                 <p style={{ color: 'gray' }}>Download your meme here.</p>
-                <img src="../download_image.png" alt="" style={{ width: '30%' }} />
+                <img src="./src/download_image.png" alt="" style={{ width: '30%' }} />
               </div>
               <Button
                 className={classes.control}
