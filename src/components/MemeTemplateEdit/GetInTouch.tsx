@@ -105,11 +105,11 @@ export function GetInTouch() {
     <>
       <Paper shadow="md" radius="lg">
         <div className={`${classes.wrapper} template-edit-container`}>
-          <div className={classes.contacts}>
+          <div className={`${classes.contacts} edit-template-bg-container`}>
             <img
               src={template ? template.blank : ''}
               alt=""
-              style={{ padding: '25px', maxWidth: '500px' }}
+              className="edit-template-img"
             />
           </div>
           <form className={`${classes.form} template-edit-form`} onSubmit={handleGenerateMeme}>
@@ -146,14 +146,14 @@ export function GetInTouch() {
       {result && (
         <Paper shadow="md" radius="lg">
           <div className={`${classes.wrapper} template-result-container`}>
-            <div className={classes.contacts}>
+            <div className={`${classes.contacts} edit-template-bg-container`}>
               <img
                 src={result && result.url}
                 alt=""
-                style={{ padding: '25px', maxWidth: '500px' }}
+                className="edit-template-img"
               />
             </div>
-            <div>
+            <div className="download-btn-container">
               <div style={{ marginBottom: '2rem', width: '100%' }}>
                 <p style={{ color: 'gray' }}>Download your meme here.</p>
                 <img src="../download_image.png" alt="" style={{ width: '30%' }} />

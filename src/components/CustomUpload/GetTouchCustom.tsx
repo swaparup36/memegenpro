@@ -71,8 +71,8 @@ export function GetTouchCustom({ templateBg }: customTemplatePropsInterface) {
     <>
       <Paper shadow="md" radius="lg" style={{ boxShadow: 'none' }}>
         <div className={`${classes.wrapper} template-edit-container-custom`}>
-          <div className={classes.contacts}>
-            <img src={templateBg} alt="" style={{ padding: '25px', maxWidth: '500px' }} />
+          <div className={`${classes.contacts} edit-template-bg-container`}>
+            <img src={templateBg} alt="" className="edit-template-img" />
           </div>
           <form className={`${classes.form} template-edit-form`} onSubmit={handleGenerateMeme}>
             <Text fz="lg" fw={700} className={classes.title} style={{ color: 'black' }}>
@@ -143,7 +143,7 @@ export function GetTouchCustom({ templateBg }: customTemplatePropsInterface) {
               <img
                 src={result && result.url}
                 alt=""
-                style={{ padding: '25px', maxWidth: '500px' }}
+                className="edit-template-img"
               />
             </div>
             <div>

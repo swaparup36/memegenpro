@@ -63,3 +63,101 @@
     width: 100%;
     padding-left: 2rem;
 }
+
+._inner_50rgy_1{
+    height: 90svh;
+}
+
+.landing-meme-img{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    max-height: 60svh;
+}
+
+.landing-meme-img img{
+    width: 100%;
+}
+
+.template-cards{
+    width: 20%;
+    margin: 2rem;
+}
+
+.edit-template-img {
+    padding: 25px;
+    max-width: 500px;
+}
+
+.edit-template-bg-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.link-drop-div {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+}
+
+@media (max-width: 450px){
+    ._inner_50rgy_1{
+        flex-direction: column !important;
+        height: 120svh;
+    }
+
+    .landing-meme-img{
+        margin-top: 5rem !important;
+    }
+
+    .template-container {
+        padding: 10px;
+    }
+
+    .template-cards {
+        width: 40%;
+        margin: 1rem;
+    }
+
+    ._wrapper_6yz66_1.template-edit-container {
+        flex-direction: column !important;
+    }
+
+    .edit-template-bg-container{
+        width: 100%;
+    }
+
+    .edit-template-img {
+        padding: 10px;
+        max-width: 400px;
+    }
+
+    .template-edit-form {
+        width: 100%;
+    }
+
+    .template-result-container{
+        flex-direction: column;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    .download-btn-container{
+        width: 100% !important;
+        margin-bottom: 5rem;
+    }
+
+    .link-drop-div {
+        width: 80%;
+    }
+
+    .template-edit-container-custom {
+        flex-direction: column;
+    }
+
+    .template-result-container div {
+        width: 100%;
+    }
+}

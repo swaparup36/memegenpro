@@ -1,7 +1,7 @@
 import { Container, Title, Button, Group, Text, List, ThemeIcon, rem } from '@mantine/core';
 import { IconCheck } from '@tabler/icons-react';
-import classes from './HeroBullets.module.css';
 import { useNavigate } from 'react-router-dom';
+import classes from './HeroBullets.module.css';
 
 export function HeroBullets() {
   const navigate = useNavigate();
@@ -44,7 +44,9 @@ export function HeroBullets() {
             </Button>
           </Group>
         </div>
-        <img src="https://i.imgflip.com/8vs6s0.jpg" alt="" style={{ width: '30%' }} />
+        <div>
+          <img src="https://i.imgflip.com/8vs6s0.jpg" alt="" className="landing-meme-img" />
+        </div>
       </div>
     </Container>
   );

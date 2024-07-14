@@ -14,7 +14,7 @@ interface tempalteCardIterface {
 export function MemeTemplateCard({ template }: tempalteCardIterface) {
   const navigate = useNavigate();
   return (
-    <Card withBorder radius="md" p="md" className={classes.card} style={{ width: '20%', margin: '2rem' }}>
+    <Card withBorder radius="md" p="md" className={`${classes.card} template-cards`}>
       <Card.Section>
         <Image src={template.blank} alt={template.name} height={180} />
       </Card.Section>

@@ -1,6 +1,6 @@
 import { Group, Burger, Container } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import classes from './HeaderMenu.module.css';
 
 const links = [
@@ -11,6 +11,7 @@ const links = [
 
 export function HeaderMenu() {
   const [opened, { toggle }] = useDisclosure(false);
+  const navigate = useNavigate();
 
   const items = links.map((link) => {
     console.log('first');
@@ -32,7 +33,7 @@ export function HeaderMenu() {
         <div className={classes.inner}>
           {/* <MantineLogo style={{ cursor: 'pointer' }} size={28} onClick={() => navigate('/')} /> */}
           <div style={{ width: '20%' }}>
-            <img src="https://i.ibb.co/Phtr5md/memegenpro-logo.png" alt="" style={{ width: '100%' }} />
+            <img src="https://i.ibb.co/Phtr5md/memegenpro-logo.png" alt="" style={{ width: '100%' }} onClick={() => navigate('/')} />
           </div>
           <Group gap={5} visibleFrom="sm">
             {items}
